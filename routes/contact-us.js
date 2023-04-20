@@ -1,11 +1,8 @@
-const path = require('path');
-const express = require('express');
 
+const express = require('express');
+const contactUsController=require('../conrollers/contact-us')
 const router=express.Router();
 
-router.get('/contact-us',(req,res,next)=>{
-    // res.send('<h1>Middleware Page</h1>');
-    res.sendFile(path.join(__dirname,'../' ,'views', 'contact-us.html'));
-});
+router.get('/contact-us',contactUsController.contactPage);
 
 module.exports=router;
